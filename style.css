@@ -1,0 +1,101 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.left,
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: #fff;
+}
+
+.left {
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+
+.right {
+    background-color: #fff;
+}
+
+
+.left h1 {
+    color: #00c86f;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.left p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+
+.car-image {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #00c86f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00b863;
+}
+
+.emoji {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.banner-image {
+    width: 100%;
+    border-radius: 10px;
+}

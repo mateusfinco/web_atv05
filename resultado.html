@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Financiamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <section class="left">
+            <img src="assets/logo.png" alt="Logo Finance" class="logo">
+            <h1>Finance</h1>
+            <div class="result-info">
+                <p id="mensagem"></p>
+                <p>Valor das suas parcelas:</p>
+                <p id="valorParcela"></p>
+                <p>Valor final a pagar:</p>
+                <p id="valorTotal"></p>
+                <p id="prazo"></p>
+            </div>
+            <button onclick="voltar()">Voltar ao simulador</button>
+        </section>
+        <section class="right">
+            <img src="assets/banner.png" alt="Banner" class="banner-image">
+        </section>
+    </main>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                nome: params.get('nome'),
+                valorParcela: params.get('valorParcela'),
+                valorTotal: params.get('valorTotal'),
+                parcelas: params.get('parcelas')
+            };
+        }
+
+        function formatarCampo(valor) {
+            return parseFloat(valor).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+                minimumFractionDigits: 2
+            });
+        }
+
+        window.onload = function () {
+            const params = getQueryParams();
+            document.getElementById('mensagem').innerText = `Olá, ${decodeURIComponent(params.nome)}! Aqui está a simulação:`;
+            document.getElementById('valorParcela').innerText = formatarCampo(params.valorParcela);
+            document.getElementById('valorTotal').innerText = formatarCampo(params.valorTotal);
+            document.getElementById('prazo').innerText = `Financiamento em ${params.parcelas} meses.`;
+        };
+
+        function voltar() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>
